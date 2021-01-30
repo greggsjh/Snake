@@ -1,0 +1,676 @@
+<!DOCTYPE html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<style>
+			body{
+				background: repeat url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/pool_table.png");
+				color: rgb(173, 233, 230);
+			}
+			#board{			
+				border-radius: 5px;
+				background-color: rgb(31, 109, 105);				
+			}
+			#board div.col{
+				height: 5em;
+			}
+			#score{
+				font-family: Courier New;
+				font-size: 50px;
+			}
+			.selected{
+				background-color: green;
+			}
+			.menu{
+				border-radius: 5px;	
+				background-color: rgb(31, 109, 105);	
+			}				
+			.temporaryBanner{				
+				border-radius: 5px;	
+				font-family: Courier New;
+				font-size: 5em;
+				align-content: center;	
+				background-color: rgb(31, 109, 105);	
+			}
+		</style>
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	</head>
+	<body>		
+		<div class="container">
+			<div class="row align-center">
+				<div class="col-1 menu m-2">
+					<div class="row mx-auto">
+						Score:
+					</div>
+					<div id="score" class="row mx-auto">
+						0
+					</div>					
+				</div>
+				<div id="board" class="col-10 m-2">		
+					<div class="row">
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+						<div class="col">
+						
+						</div>
+					</div>
+				</div>
+				<div id="gameOver" class="col-10 m-2 temporaryBanner">
+					YOU WON!!!
+				</div>
+				<div id="pleaseWait" class="col-10 m-2 temporaryBanner">
+					PLEASE WAIT...
+				</div>
+				<div id="startGame" class="d-grid m-2" >
+					<button id="btnStartGame" type="button" class="btn btn-dark btn-lg">Start Game!</button>
+				</div>
+				<div class="col-1">
+				</div>
+			</div>
+			</div>										
+		</div>
+		
+		<!-- <audio id="moveSound" src="C:\tmp\Snake\moveSound.wav" preload="auto"></audio>  -->
+		<audio id="moveSound" src="https://fundigent.blob.core.windows.net/fundigent-test-container-001/moveSound.wav" preload="auto"></audio>		 
+		<audio id="scoreSound" src="https://fundigent.blob.core.windows.net/fundigent-test-container-001/score.wav" preload="auto"></audio>
+		<audio id="winnerSound" src="https://fundigent.blob.core.windows.net/fundigent-test-container-001/winner.wav" preload="auto"></audio>
+		
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			(function (){
+				window.onload = (event) => {
+					let divBoard = document.getElementById("board");
+					divBoard.addEventListener("mouseover", selectCell);
+					divBoard.addEventListener("mouseout", deselectCell);
+					divBoard.addEventListener("mouseenter", resetOffset);
+					
+					let btnStartGame = document.getElementById("btnStartGame");
+					btnStartGame.addEventListener("click", setupBoard);
+					
+					preloadAudio();
+				};
+/***************************** class definitions ****************************************************************************/								
+				class Segment{
+					xCoordinate;
+					yCoordinate;					
+					isSelected = false;
+				}
+				
+				class Snake{
+					segments = [];
+					
+					addSegment(x, y) {
+						let currentSegment = new Segment();
+						currentSegment.xCoordinate = x;
+						currentSegment.yCoordinate = y;
+						currentSegment.isSelected = true;
+
+						this.segments.unshift(currentSegment);
+						//console.log(`Cell ${x}, ${y} was added to player snake.`);
+					}		
+						
+					removeSegment(){						
+						let removedSegment = this.segments.pop();
+						//console.log(`Cell ${removedSegment.xCoordinate}, ${removedSegment.yCoordinate} was removed.`);
+					}
+				}
+				
+/***************************** Properties ****************************************************************************/												
+				var playerSnake = null;
+				var lastNode = new Segment();
+				var xOffset = 99;
+				var yOffset = 99;				
+				var gameScore = 0;
+				
+/***************************** Functions****************************************************************************/			
+				var preloadAudio = () => {
+					let moveSound = document.getElementById("moveSound");
+					let moveSoundLoaded = true;
+					moveSound.addEventListener("canplaythrough", event => {				
+						moveSoundLoaded = true;
+					});
+									
+					let divBoard = document.getElementById("board");					
+					let divGameOver = document.getElementById("gameOver");
+					let divPleaseWait = document.getElementById("pleaseWait");
+					let divStartGame = document.getElementById("startGame");
+					
+					divBoard.style.display = "none";
+					divGameOver.style.display = "none";					
+					divStartGame.style.display = "none";					
+					divPleaseWait.style.display = "";
+						
+					let multiplier = 1;
+					let windowIntervalId = window.setInterval(()=> {
+						console.log(`Waiting on sounds to load - Elapsed: ${Math.floor((multiplier * 10)/60)}m ${ (multiplier * 10)%60}s`);
+						//if(moveSoundLoaded && scoreSoundLoaded){
+						if(moveSoundLoaded){
+							divStartGame.style.display = "";					
+							divPleaseWait.style.display = "none";
+							window.clearInterval(windowIntervalId);
+						}
+						multiplier++;
+					}, 10000);																
+				}
+
+/********************************************************************************************************************/						
+				var setupBoard = () => {
+					let divBoard = document.getElementById("board");					
+					let divStartGame = document.getElementById("startGame");				
+					divBoard.style.display = "";					
+					divStartGame.style.display = "none";				
+					
+					for(let i = 0; i < divBoard.childElementCount; i++){
+						let randomOneToTen = Math.floor(Math.random() * Math.floor(10));
+						let divBoardRow = divBoard.children[i];						
+						//divBoardRow.children[randomOneToTen].style.backgroundColor = "red";
+						let enemyImg = document.createElement("img");
+						enemyImg.setAttribute("src", "https://fundigent.blob.core.windows.net/fundigent-test-container-001/alien.png");
+						enemyImg.setAttribute("class", "mx-auto");
+						divBoardRow.children[randomOneToTen].appendChild(enemyImg);
+					}
+					
+					playerSnake = new Snake();
+					//console.log("Player Snake: " + playerSnake);
+				};
+				
+/********************************************************************************************************************/	
+			
+				var resetOffset = (e) => {
+					xOffset = yOffset = 0;					
+				}
+				
+/********************************************************************************************************************/
+
+				var getXCoordinate = (e) => {
+					let cellXCoordinate = 0;
+					for(let index = 0; index < e.target.parentNode.childElementCount; index++){
+						if(e.target.parentNode.children[index] == e.target)
+						{
+							cellXCoordinate = index;
+						}
+					}					
+					return cellXCoordinate;
+				}
+				
+/********************************************************************************************************************/
+
+				var getYCoordinate = (e) => {
+					let cellYCoordinate = 0;
+					for(let index = 0; index < e.target.parentNode.parentNode.childElementCount; index++){
+						if(e.target.parentNode.parentNode.children[index]== e.target.parentNode){
+							cellYCoordinate = index;
+						}
+					}	
+					return cellYCoordinate;
+				}
+				
+/********************************************************************************************************************/
+				
+				var updateOffsetCoordinates = (x, y) => {
+					if(xOffset == 99 && yOffset == 99){
+						xOffset = yOffset = 0;
+					}
+					else{
+						xOffset = x - lastNode.xCoordinate;
+						yOffset = y - lastNode.yCoordinate;
+					}
+					
+					//console.log(`updateOffsetCoordinates - xOffet: ${xOffset}, yOffset: ${yOffset}`);					
+				}
+
+/********************************************************************************************************************/
+
+				var updateLastNode = (x, y) => {				
+					lastNode.xCoordinate = x;
+					lastNode.yCoordinate = y;
+					
+					//console.log(`xCurrent: ${lastNode.xCoordinate}, yCurrent: ${lastNode.yCoordinate}`);
+				}
+
+/********************************************************************************************************************/
+
+				var updatePlayerSnakeSegments = () => {
+					for(const item of playerSnake.segments){
+						item.xCoordinate = item.xCoordinate + xOffset;
+						item.yCoordinate = item.yCoordinate + yOffset;						
+						
+						//console.log(`${index}: x = ${playerSnake.segments[index].xCoordinate}, y = ${playerSnake.segments[index].yCoordinate}, isSelected = ${playerSnake.segments[index].isSelected}`);
+					}									
+				}
+
+/********************************************************************************************************************/
+		
+				var updateBoard = () =>{
+					//Game Over
+					if(gameScore == 10){
+						let divBoard = document.getElementById("board");
+						divBoard.style.display = "none";
+						let divGameOver = document.getElementById("gameOver");
+						divGameOver.style.display = "";
+						playSound("winnerSound");
+					}
+					else{
+						//update board
+						let divBoard = document.getElementById("board");									
+						
+						for(let i = 0; i < divBoard.childElementCount; i++){		
+							let divBoardRow = divBoard.children[i];	
+							for(let j = 0; j < divBoardRow.childElementCount; j++){							
+								if(lastNode.xCoordinate != j && lastNode.yCoordinate != i){
+									divBoardRow.children[j].style.backgroundColor = "";	
+									divBoardRow.children[j].replaceChildren();
+								}
+							}
+						}						
+						
+						for(let i = 0; i < divBoard.childElementCount; i++){
+							let randomOneToTen = Math.floor(Math.random() * Math.floor(10));
+							let divBoardRow = divBoard.children[i];								
+							let	isPartOfSnake = false;						
+							for(const item of playerSnake.segments){
+								if(item.xCoordinate == i && item.yCoordinate == randomOneToTen) { 
+									isPartOfSnake = true;
+									break;
+								}
+							}
+							
+							if(!isPartOfSnake){
+								let enemyImg = document.createElement("img");
+								enemyImg.setAttribute("src", "https://fundigent.blob.core.windows.net/fundigent-test-container-001/alien.png");
+								enemyImg.setAttribute("class", "mx-auto");
+								divBoardRow.children[randomOneToTen].appendChild(enemyImg);
+							}
+						}
+						
+						for(let i = 0; i < divBoard.childElementCount; i++){		
+							let divBoardRow = divBoard.children[i];	
+							for(let j = 0; j < divBoardRow.childElementCount; j++){
+								for(const item of playerSnake.segments){								
+									if(item.xCoordinate == j && item.yCoordinate == i && item.isSelected == true){
+										divBoardRow.children[j].style.backgroundColor = "green";
+									}
+								}
+							}
+						}
+						
+						for(let i = 0; i < divBoard.childElementCount; i++){		
+							let divBoardRow = divBoard.children[i];	
+							for(let j = 0; j < divBoardRow.childElementCount; j++){
+															
+								for(const item of playerSnake.segments){								
+									if(item.xCoordinate == j && item.yCoordinate == i && item.isSelected == false){
+										divBoardRow.children[j].style.backgroundColor = "";
+										divBoardRow.children[j].replaceChildren();
+									}
+								}
+							}
+						}
+					}
+				}
+
+/********************************************************************************************************************/
+
+				var updateGameScore = () => {
+					let divScore = document.getElementById("score");
+					gameScore = parseInt(divScore.innerHTML, 10);
+					gameScore++;
+					divScore.innerHTML = gameScore.toString(10);
+				}
+
+/********************************************************************************************************************/
+				var playSound = (id) => {					
+					var sounds = document.getElementById(id);					
+					sounds.play();
+				}							
+/********************************************************************************************************************/
+				//game loop
+				var selectCell = (e) => {										
+					let cellXCoordinate = getXCoordinate(e);
+					let cellYCoordinate = getYCoordinate(e);
+					
+					updateOffsetCoordinates(cellXCoordinate, cellYCoordinate);									
+					updateLastNode(cellXCoordinate, cellYCoordinate);
+					
+					playerSnake.addSegment(cellXCoordinate, cellYCoordinate);							
+					
+					if(e.target.childElementCount > 0){
+						e.target.firstChild.remove();
+						playSound("scoreSound");
+						updateGameScore();																																
+					}
+					else{									
+						playSound("moveSound");
+						playerSnake.removeSegment();						
+					}
+									
+					e.target.style.backgroundColor = "green";									
+					
+					updateBoard(e);
+				};			
+
+/********************************************************************************************************************/				
+				var deselectCell = (e) => {				
+					e.target.style.backgroundColor = "";	
+					//e.target.firstChild.remove();
+				};
+/********************************************************************************************************************/				
+			})();
+		</script>
+	</body>
+</html>
